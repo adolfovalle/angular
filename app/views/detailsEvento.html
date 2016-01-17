@@ -1,0 +1,75 @@
+
+<html>
+<body ng-controller="EventosCtrl">
+ <h2 align ="center"><strong>{{evento.titulo}}</strong></h2>
+ <br>
+<table class="table table-striped" >
+
+    <tr>
+       <td style="width:25%"> <a href="/#/eventos/{{e.eventId}}" style="float: left;" class="thumbnail"> 
+
+			<img ng-src="http://i.imgur.com/I0p8PvI.jpg"   style="max-height:100%; max-width:100%;" >			</a> 
+			</td> 
+
+		<td>
+		 <p> {{evento.descripcion}}</p>	
+		 <br>
+		 <p> <strong> Dirección: </strong> {{evento.direccion}}</p>	
+		 <br>
+		 <p> <strong> Hora de inicio:</strong> {{evento.horaInicio}}</p>	
+		 <br>
+		 <p> <strong> Hora de término:</strong> {{evento.horaTermino}}</p>	
+		</td>
+
+
+		<td style="width:30%">
+			<p style="text-align:right"><strong> LOCALIZACIÓN </strong>	</p>
+			<a href="" style="float: right;" class="thumbnail"> 
+			<img ng-src="images/gmaps.jpg"  style="max-height:100%; max-width:100%;" >	</a> 
+			</td> 
+		</td>
+
+    </tr>
+	
+	
+	
+	<tr ng-show="evento.estado==1">
+		<td>
+			<p><input type="email" name="email" id="email" value="" placeholder="Ingresar correo de usuario"></p>
+
+			<p><input type="button" name="commit" value="Sugerir este evento" ngClick=""></p>
+		</td>
+
+
+		<td>
+		 <textarea style="resize: none;" ng-model="comentario.texto" class="form-control" rows="5" name="comentario" id="comentario" value="" placeholder="Deja un comentario..." > </textarea>
+		</td>
+
+		<td>
+		<p><input  type="submit" name="submit" value="Comentar" ng-click="postComentarios()"></p>
+		</td>
+	</tr>
+	<tr ng-show="evento.estado==0">
+	<input ng-show="evento.estado==0" type="submit" name="submit" value="Aprobar Solicitud" ng-click="putEvento()"></p>
+	</tr>
+</table>
+
+<table ng-show="evento.estado==1" class="table table-striped2" WIDTH = 500>
+<tr bgcolor="#cbe4fe">
+<td style="width:15%" ><p> Usuario</p> </td>
+<td><p> Comentario</p> </td>
+</tr>
+
+<tr  ng-repeat="c in comentarios" >	
+		 <td ng-show="c.comentarioEventoId == evento.eventId"><p>{{c.usuario.nombre}} {{c.usuario.apellido}}</td>
+		<td ng-show="c.comentarioEventoId == evento.eventId"><p> {{c.textoComentario}} </p></td>
+</tr>
+
+</table>
+ <footer>
+				<p>
+					&copy; Copyright Comuni
+				</p>
+  </footer> 
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Comuni</title>
+  <!-- Recursos de bower-->
+  <!-- build:css css/vendor.css -->   
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Estilos personalizados-->
+  <!-- build:css css/main.css -->  
+  <!-- inject:css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+ </head>
+
+<body ng-app="angularApp"  style="color: #000;
+  padding: 20px;
+  background: #fff; ">
+
+		<nav ng-controller="UsuariosCtrl"  class="navbar navbar-inverse navbar-fixed-top" style="background-color: #4169E1;">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a ng-show="user.tipo==1 || user.tipo==0" href="#/home"  style="color: white;" class="navbar-brand">Comuni</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav" >
+						
+    <li><a ng-show="user.tipo==1 || user.tipo==0" href="#/home" style="color: white;">Inicio</a></li>
+   <!-- <li ><a href="#/usuarios" style="color: white;" >Usuarios</a></li>-->
+    <li ><a ng-show="user.tipo==0 || 
+    user.tipo==1" href="#/editarperfil" style="color: white;" >Editar Perfil</a></li>
+    <li ><a ng-show="user.tipo==0" href="#/solicitud" style="color: white;" >Solicitud</a></li>
+    <li ><a ng-show="user.tipo==1" href="#/crearevento" style="color: white;" >Crear Evento</a></li>
+    <li ><a ng-show="user.tipo==1" href="#/solicitudes" style="color: white;" >Ver Solicitudes</a></li>
+    <li><a ng-show="user.tipo!=1 && user.tipo!=0" href="#/registro" style="color: white;" >Registro</a></li>
+    <li><a ng-show="user.tipo!=1 && user.tipo!=0" href="#/login" style="color: white;">Login</a></li>
+    <li><a ng-show="user.tipo==1 || user.tipo==0" href="" style="color: white;" ng-click="logout()">Logout</a></li>
+    
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+
+<div class="container" style="margin-top:2cm;">
+<div ng-view=""></div>
+</div>
+  <!-- Recursos de bower-->
+  <!-- build:js js/vendor.js --> 
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Recursos personales-->
+  <!-- build:js js/scripts.js -->   
+  <!-- inject:js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/eventosSrv.js"></script>
+  <script src="scripts/usuariosSrv.js"></script>
+  <script src="scripts/controllers/aboutCtrl.js"></script>
+  <script src="scripts/controllers/eventosCtrl.js"></script>
+  <script src="scripts/controllers/mainCtrl.js"></script>
+  <script src="scripts/controllers/usuariosCtrl.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+</html>

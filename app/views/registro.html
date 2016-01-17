@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Registro</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <section class="container">
+    <div class="registro">
+		<div id="error"></div>
+    <h2 align ="center" style="color:#3366ff;"> Ingrese sus datos </h2>
+
+    <form name="RegistroForm" ng-controller="UsuariosCtrl" >
+  <table>
+<!--<blockquote>{{usuario.password2}}</blockquote>-->
+  <tr>  Fecha de nacimiento:    <p><input ng-model= "usuario.fechaNac" type="date" name="fecha" id="fecha" value="" placeholder="Fecha"></p>
+        </tr>
+  <tr>  Email:  <p><input ng-model= "usuario.email" type="email" name="email" id="email" value="" placeholder="Email"></p> 
+        </tr>
+  <tr>  Teléfono   <p><input ng-model= "usuario.telefono" type="number" name="telefono" min="10000000" id="telefono" value="" placeholder="Teléfono"></p>
+        </tr>
+  <tr>  Primer Nombre:    <p><input ng-model= "usuario.nombre" type="text" name="nombre" id="nombre" value="" placeholder="Nombre"></p>
+        </tr>
+  <tr>  Apellido Paterno:   <p><input ng-model= "usuario.apellido" type="text" name="apellido" id="apellido" value="" placeholder="Apellido"></p>
+</tr>
+  <tr>  Contraseña:  <p><input ng-model= "usuario.password" type="password" name="password" id="password" value="" placeholder="Contraseña"></p>
+</tr>
+  <tr>  Repetir contraseña:   <p><input ng-model= "usuario.password2" type="password" name="password2" id="password2" value="" placeholder="Contraseña"></p>
+</tr>
+  <tr> Comuna: <p><select ng-model= "usuario.userIdComuna" name="comuna" id="comuna"> 
+        <option value=1> Cerrillos</option>
+        <option value=2> Cerro Navia</option>
+        <option value=3> Conchalí</option>
+        <option value=4> El Bosque</option>
+        <option value=5 >Estación Central</option>
+        <option value=6> Huechuraba</option>
+        <option value=7> Independencia</option>
+        <option value=8 >La Cisterna</option>
+        <option value=9> La Florida</option>
+        <option value=10>  La Pintana</option>
+        <option value=11>  La Granja</option>
+        <option value=12>  La Reina</option>
+        <option value=13>  Las Condes</option>
+        <option value=14>  Lo Barnechea</option>
+        <option value=15>  Lo Espejo</option>
+        <option value=16>  Lo Prado</option>
+        <option value=17>  Macul</option>
+        <option value=18>  Maipú</option>
+        <option value=19>  Ñuñoa</option>
+        <option value=20>  Pedro Aguirre Cerda</option>
+        <option value=21>  Peñalolén</option>
+        <option value=22 > Providencia</option>
+        <option value=23 > Pudahuel</option>
+        <option value=24 > Quilicura</option>
+        <option value=25>  Quinta Normal</option>
+        <option value=26>  Recoleta</option>
+        <option value=27 > Renca</option>
+        <option value=28>  San Miguel</option>
+        <option value=29>  San Joaquín</option>
+        <option value=30>  San Ramón</option>
+        <option value=31>  Santiago</option>
+        <option value=32>  Vitacura</option>
+        <option value=33>  Colina</option>
+        <option value=34>  Lampa</option>
+        <option value=35>  Tiltil</option>
+        <option value=36>  Puente Alto</option>
+        <option value=37>  San José de Maipo</option>
+        <option value=38>  Pirque</option>
+        <option value=39>  San Bernardo</option>
+        <option value=40>  Buin</option>
+        <option value=41> Paine</option>
+        <option value=42>  Calera de Tango</option>
+        <option value=43 > Melipilla</option>
+        <option value=44 > Alhué</option>
+        <option value=45>  Curacaví</option>
+        <option value=46 > María Pinto</option>
+        <option value=47>  San Pedro</option>
+        <option value=48>  Isla de Maipo</option>
+        <option value=49>  El Monte</option>
+        <option value=50>  Padre Hurtado</option>
+        <option value=51>  Peñaflor</option>
+        <option value=52>  Talagante  </option>
+        </select>
+        </p>
+  </tr>
+  <tr> Dirección:<p><input ng-model= "usuario.direccion" type="text" name="direccion" id="direccion" value="" placeholder="Dirección"></p>
+  </tr>
+</table>
+        <p><input  type="submit" name="submit" value="Aceptar" ng-click="postUsuarios()"></p>
+        </form>
+
+
+    </div>
+  </section>
+ <footer>
+				<p>
+					&copy; Copyright Comuni
+				</p>
+  </footer>
+</body>
+ 
+</html>

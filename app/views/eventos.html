@@ -1,0 +1,33 @@
+
+
+<div class="container">
+    <img class="logo" src="images/logo.jpg"  alt="logo" style="margin: 0px 20px">  
+    <img src="images/comuni.jpg" WIDTH = 200>
+</div>
+<h2 align="center" style="color:#3366ff;"> Eventos </h2>
+
+<table class="table table-striped" WIDTH = 500>
+<br>
+<br>
+<br>
+	<tr  ng-repeat="e in eventos" >	
+	
+	
+		 <td ng-show="e.estado==1" style="text-align:center"> <a href="/#/eventos/{{e.eventId}}" style="float: left;" class="thumbnail"> 
+
+			<img ng-src="http://i.imgur.com/I0p8PvI.jpg"   width="200" height="50" >			</a>
+
+			<a href="/#/eventos/{{e.eventId}}"> <h3> {{e.titulo}} </h3></a>
+			<br> <br>
+			<p> {{e.descripcion}} </p>
+			    </td>
+	
+										
+	</tr>
+
+</table>
+ <footer>
+				<p>
+					&copy; Copyright Comuni
+				</p>
+  </footer>
