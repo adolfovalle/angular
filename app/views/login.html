@@ -11,12 +11,12 @@
 
 <body>
   <section class="container" >
-  <h2 align ="center" style="color:#3366ff;">Ingrese sus datos </h2>
+  <h2 align ="center" style="color:#3366ff;">Ingrese sus datos</h2>
   <br>
     <div class="login">
 		<div id="error"></div>
 		<form align="center" name="LoginForm" ng-controller="UsuariosCtrl">
-        <p><input ng-model= "usuario.email0" type="email" name="email" id="email" value="" placeholder="Email">{{user.tipo}}</p>
+        <p><input ng-model= "usuario.email0" type="email" name="email" id="email" value="" placeholder="Email"></p>
         <p><input ng-model= "usuario.password0" type="password" name="password" id="password" value="" placeholder="Contraseña"></p>
         <p><input type="submit" name="commit" value="Login" ng-click="validacionLogin()"></p>
         </form>

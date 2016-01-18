@@ -4,7 +4,8 @@
         $scope.usuario ={};
         
         $scope.validacionLogin = function(){
-       $rootScope.user = {};
+       $rootScope.user = {};    
+
           if($scope.usuario.email0 == "user@email.com" && $scope.usuario.password0==1234){
             $rootScope.user.tipo = 0;
             $window.location.href = '/#/home';
@@ -54,7 +55,7 @@
         $scope.putUsuarios = function(){
 
                 var fechaNac1 = new Date($scope.usuario.fechaNac).toISOString().slice(0,10);
-                idUser = $scope.usuario.id;
+                idUser = 17;
 
                 dataPut= {
                   apellido: $scope.usuario.apellido, 

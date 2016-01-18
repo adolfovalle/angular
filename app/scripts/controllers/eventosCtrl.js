@@ -16,7 +16,7 @@
 
              dataComentario= {
                comentarioEventoId: $scope.evento.eventId,
-               comentarioUsuarioId: 3,
+               comentarioUsuarioId: '17',
                fechaComentario: hora,
                textoComentario: $scope.comentario.texto
             }
